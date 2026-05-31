@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+*.log
+.env
+.env.*
+site/.next/
+site/node_modules/
+site/*.tsbuildinfo
+docs/goals/
+docs/superpowers/
+!docs/releases/
+!docs/releases/**
