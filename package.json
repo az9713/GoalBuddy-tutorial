@@ -1,0 +1,68 @@
+{
+  "name": "goalbuddy",
+  "version": "0.3.8",
+  "description": "A /goal operating loop for Codex and Claude Code: goal oracles, local boards, receipts, and verification.",
+  "type": "module",
+  "bin": {
+    "goalbuddy": "internal/cli/goal-maker.mjs",
+    "goal-maker": "internal/cli/goal-maker.mjs"
+  },
+  "files": [
+    ".agents/plugins/marketplace.json",
+    "CHANGELOG.md",
+    "README.md",
+    "CONTRIBUTING.md",
+    "docs/releases",
+    "plugins/goalbuddy",
+    "internal/assets",
+    "internal/cli",
+    "goalbuddy/SKILL.md",
+    "goalbuddy/agents",
+    "goalbuddy/scripts",
+    "goalbuddy/surfaces",
+    "goalbuddy/templates"
+  ],
+  "scripts": {
+    "check": "node --check internal/cli/*.mjs goalbuddy/scripts/*.mjs goalbuddy/surfaces/local-goal-board/scripts/*.mjs goalbuddy/surfaces/local-goal-board/scripts/lib/*.mjs && node --test internal/test/*.test.mjs goalbuddy/surfaces/local-goal-board/test/*.test.mjs",
+    "test": "node --test internal/test/*.test.mjs goalbuddy/surfaces/local-goal-board/test/*.test.mjs",
+    "pack:dry-run": "npm pack --dry-run",
+    "postinstall": "node internal/cli/postinstall.mjs",
+    "publish:check": "node internal/cli/check-publish-version.mjs && npm run pack:dry-run",
+    "prepublishOnly": "node internal/cli/check-publish-version.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tolibear/goalbuddy.git"
+  },
+  "keywords": [
+    "codex",
+    "codex-skill",
+    "openai-codex",
+    "claude-code",
+    "claude-code-plugin",
+    "claude-code-skill",
+    "anthropic",
+    "goalbuddy",
+    "goal",
+    "task-board",
+    "receipts",
+    "project-management",
+    "automation",
+    "cli",
+    "workflow",
+    "agent",
+    "verification"
+  ],
+  "author": "tolibear",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tolibear/goalbuddy/issues"
+  },
+  "homepage": "https://github.com/tolibear/goalbuddy#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
